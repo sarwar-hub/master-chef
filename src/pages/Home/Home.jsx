@@ -6,7 +6,10 @@ import Chefs from '../../components/Chefs/Chefs';
 const Home = () => {
     return (
         <div>
-            <Chefs></Chefs>
+            <HomeBanner></HomeBanner>
+            <div className='mx-2 md:mx-[10%] my-[100px]'>
+                <Chefs></Chefs>
+            </div>
         </div>
     );
 };
