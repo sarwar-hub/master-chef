@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import user from '../../assets/user.webp';
 import { Link } from 'react-router-dom';
 import IsActive from '../IsActive/IsActive';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Navbar = () => {
+    const {user} = useContext(AuthContext);
     return (
         <div className="navbar bg-base-200">
             <div className="navbar-start">
@@ -36,7 +38,7 @@ const Navbar = () => {
                         </div>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Name</a></li>
+                        <li><a>{user}</a></li>
                         <li><a>Logout</a></li>
                     </ul>
                 </div>
