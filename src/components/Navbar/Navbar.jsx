@@ -9,6 +9,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 const Navbar = () => {
 
     const {user,logOut} = useContext(AuthContext);
+    console.log(user);
     
     const handleLogOut = async() => {
         try {
@@ -47,11 +48,11 @@ const Navbar = () => {
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
-                        <img src={avatar} />
+                        <img src={user?user.photoURL:avatar} />
                         </div>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>{user?.email}</a></li>
+                        <li><a>{user?.displayName}</a></li>
                         <button onClick={handleLogOut} className='btn btn-sm bg-red-800 text-white hover:text-red-700'>Logout</button>
                     </ul>
                 </div>

@@ -8,7 +8,11 @@ const Register = () => {
     const [passError, setPassError] = useState('');
     const [notice, setNotice] = useState('');
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateNamePhoto, loadding} = useContext(AuthContext);
+
+    if(loadding) {
+        return <h1 className='absolute text-6xl'>loadding</h1>;
+    }
 
     const handleRegister = async(event) => {
         event.preventDefault();
@@ -26,6 +30,7 @@ const Register = () => {
         }
         try {
             await createUser(email, password);
+            await updateNamePhoto(name, photo);
             event.target.reset();
         } catch(error) {
             setError(error.message);
@@ -74,7 +79,7 @@ const Register = () => {
                         <div className='bg-red-500/20 text-red-500 p-3 rounded-md'>{passError}</div>
                     }
                     <div className="form-control mt-6">
-                        <button type='submit' className="btn btn-primary">Register</button>
+                        <button type='submit' className="btn btn-primary">{loadding?<>Please wait...</>:<>Register</>}</button>
                     </div>
                     <label className="label">
                         <p className='label-text-alt'>If already registered <Link to='/login'><span className="text-white link link-hover">Login</span></Link></p>
