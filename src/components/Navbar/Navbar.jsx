@@ -17,7 +17,7 @@ const Navbar = () => {
                         <li><a>About</a></li>  
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl"><span className='text-black px-3 py-2 bg-primary/60'> MASTER</span> <span className='text-primary px-3 py-2 bg-black'> CHEF</span></a>
+                <a className="normal-case text-xl"><span className='text-white px-3 py-2 bg-primary/60'> MASTER</span><span className='text-primary px-3 py-2 bg-black'>CHEF</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -27,7 +27,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link><button className='btn mr-3'>Login</button></Link>
+                <Link><button className='btn btn-sm mr-3'>Login</button></Link>
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">

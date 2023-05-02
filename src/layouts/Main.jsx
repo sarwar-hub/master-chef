@@ -9,7 +9,9 @@ const Main = () => {
         <div>
             <Navbar></Navbar>
             <HomeBanner></HomeBanner>
-            <Outlet></Outlet>
+            <div className='mx-2 md:mx-[10%] my-[100px]'>
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 };
