@@ -1,8 +1,29 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+
 
 const Recipe = ({recipe}) => {
+
+    // button state
+    const [disable, setDisable] = useState(false);
+
+    const handleFav = () => {
+        toast.success('Added to Favorite ✔', {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
+        setDisable(!disable);
+    }
+
     const {recipe_id, image, name, ingredients, cooking_method, rating} = recipe;
     return (
         <div className="flex flex-col justify-center md:flex-row bg-base-100 shadow-xl rounded-xl">
@@ -15,7 +36,7 @@ const Recipe = ({recipe}) => {
                 </div>
                 <div className="flex justify-between items-center">
                     rating
-                    <button className="btn btn-primary">Watch</button>
+                    <button disabled={disable} onClick={handleFav} className={`btn btn-primary`}>Add to favorite</button>
                 </div>
             </div>
         </div>

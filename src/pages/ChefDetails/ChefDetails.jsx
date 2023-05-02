@@ -6,31 +6,31 @@ import { useLoaderData, useParams } from 'react-router-dom';
 
 const ChefDetails = () => {
     const chefDetails = useLoaderData();
+    // recipe state
     const [recipes, setRecipes] = useState(chefDetails);
 
     const {id} = useParams();
 
-        // chef state
-        const [chef, setChef] = useState({});
+    // chef state
+    const [chef, setChef] = useState({});
+    
+    // load all chefs
+    useEffect(()=>{
+        const loadChef = async() => {  
 
-        
-        // load all chefs
-        useEffect(()=>{
-            const loadChef = async() => {  
+            try{
+                const response = await fetch('http://localhost:5000/chef');
+                const chefs = await response.json();
+                // find chef
+                const currentChef = chefs.find(chef => chef.chef_id === parseInt(id));
+                setChef(currentChef);
 
-                try{
-                    const response = await fetch('http://localhost:5000/chef');
-                    const chefs = await response.json();
-                    // find chef
-                    const currentChef = chefs.find(chef => chef.chef_id === parseInt(id));
-                    setChef(currentChef);
-
-                } catch(error) {
-                    console.log(error);
-                }
+            } catch(error) {
+                console.log(error);
             }
-            loadChef();
-        },[id])
+        }
+        loadChef();
+    },[id])
         
 
     return (
