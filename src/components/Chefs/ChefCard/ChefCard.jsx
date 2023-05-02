@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({chef}) => {
     const {chef_id, image, name, experience, numRecipes, likes} = chef;
@@ -22,7 +23,7 @@ const ChefCard = ({chef}) => {
                         </svg>
                         <span>{likes}</span>
                     </p>
-                    <button className="mt-[100px] btn btn-primary">View details</button>
+                    <Link to={`/chefs/${chef_id}`}><button  className="mt-[100px] btn btn-primary">View details</button></Link>
                 </div>
             </div>
         </div>

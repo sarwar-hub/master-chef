@@ -22,11 +22,16 @@ const Chefs = () => {
         },[])
 
     return (
+        <>
+        <h1 className='text-7xl'>Our Masters</h1>
+        <hr className='my-8' />
         <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+            
             {
                 chefs?.map(chef => <ChefCard key={chef.chef_id} chef={chef}></ChefCard>)
             }
         </div>
+        </>
     );
 };
 

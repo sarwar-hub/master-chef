@@ -6,7 +6,6 @@ import Chefs from '../../components/Chefs/Chefs';
 const Home = () => {
     return (
         <div>
-            <h1>Our Masters</h1>
             <Chefs></Chefs>
         </div>
     );
