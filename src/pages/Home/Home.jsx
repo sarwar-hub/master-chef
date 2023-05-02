@@ -2,6 +2,7 @@
 import React from 'react';
 import HomeBanner from '../../components/HomeBanner/HomeBanner';
 import Chefs from '../../components/Chefs/Chefs';
+import Testimonial from '../../components/Testimonial/Testimonial';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <HomeBanner></HomeBanner>
             <div className='mx-2 md:mx-[10%] my-[100px]'>
                 <Chefs></Chefs>
+                <Testimonial></Testimonial>
             </div>
         </div>
     );

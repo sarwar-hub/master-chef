@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAZSSEkkHu1hYY4VN7cZt7jXVDzFH28kEY",
-  authDomain: "master-chef-f1d66.firebaseapp.com",
-  projectId: "master-chef-f1d66",
-  storageBucket: "master-chef-f1d66.appspot.com",
-  messagingSenderId: "508753686263",
-  appId: "1:508753686263:web:0860494feeb28255466df2"
+  apiKey: "AIzaSyDbNUYNdVHnydEHWtVprl9WnhHy20ClKxI",
+  authDomain: "master-chef-862dc.firebaseapp.com",
+  projectId: "master-chef-862dc",
+  storageBucket: "master-chef-862dc.appspot.com",
+  messagingSenderId: "716766971312",
+  appId: "1:716766971312:web:dea13200a4d8be9d65c275"
 };
 
 // Initialize Firebase

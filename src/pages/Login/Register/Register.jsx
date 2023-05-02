@@ -1,15 +1,28 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [error, setError] = useState('');
     const [passError, setPassError] = useState('');
     const [notice, setNotice] = useState('');
 
+        
 
-    const handleRegister = () => {
 
+    const handleRegister = async(event) => {
+        event.preventDefault();
+        setError('');
+        setPassError('');
+
+        const name = event.target.name.value;
+        const photo = event.target.photo.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        
+
+        
     }
     return (
         <div className='mx-2 md:mx-[10%] my-[100px]'>

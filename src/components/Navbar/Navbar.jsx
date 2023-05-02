@@ -3,10 +3,10 @@ import React, { useContext } from 'react';
 import user from '../../assets/user.webp';
 import { Link } from 'react-router-dom';
 import IsActive from '../IsActive/IsActive';
-import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext);
+    
     return (
         <div className="navbar bg-base-200">
             <div className="navbar-start">
