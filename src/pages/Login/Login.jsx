@@ -1,11 +1,26 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
     const [error, setError] = useState('');
 
-    const handleLogin = () => {
+    const {logIn} = useContext(AuthContext);
+
+    const handleLogin = async(event) => {
+        event.preventDefault();
+        setError('');
+
+        const email = event.target.email.value; 
+        const password = event.target.password.value;
+
+        try {
+            await logIn(email, password);
+            event.target.reset();
+        } catch(error) {
+            setError(error.message);
+        }
 
     }
     

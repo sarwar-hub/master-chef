@@ -8,8 +8,7 @@ const Register = () => {
     const [passError, setPassError] = useState('');
     const [notice, setNotice] = useState('');
 
-        
-
+    const {createUser} = useContext(AuthContext);
 
     const handleRegister = async(event) => {
         event.preventDefault();
@@ -21,7 +20,16 @@ const Register = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         
-
+        if (password.length < 6) {
+            setPassError('Password should be at least 6 characters');
+            return
+        }
+        try {
+            await createUser(email, password);
+            event.target.reset();
+        } catch(error) {
+            setError(error.message);
+        }
         
     }
     return (

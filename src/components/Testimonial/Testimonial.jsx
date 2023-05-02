@@ -13,7 +13,7 @@ const Testimonial = () => {
                 <img src={banner} className="w-full" />
                 <div className='absolute text-center mt-[20%] px-16 bg-black/80'>
                     <h1 className='text-4xl'>John</h1>
-                    <p>A belated post but just wanted to say that my friend and I had such a great time last Saturday learning how to make tamales! Maggie made something that seemed so daunting to us believing and knowing that "yes, we can"!
+                    <p>A belated post but just wanted to say that my friend and I had such a great time last Saturday learning how to make tamales! Maggie made something that seemed so daunting to us believing and knowing that yes, we can!
 Her passion and love of teaching her tricks of the trade is profound! Her love of bringing people together through.
                     </p>
                 </div>
