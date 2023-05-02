@@ -9,8 +9,12 @@ const Home = () => {
         <div>
             <HomeBanner></HomeBanner>
             <div className='mx-2 md:mx-[10%] my-[100px]'>
-                <Chefs></Chefs>
-                <Testimonial></Testimonial>
+                <div className='mb-[100px]'>
+                    <Chefs></Chefs>
+                </div>
+                <div className='mb-[100px]'>
+                    <Testimonial></Testimonial>
+                </div>
             </div>
         </div>
     );
