@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Recipes from '../../components/Recipes/Recipes';
 import DetailsBanner from '../../components/DetailsBanner/DetailsBanner';
 import { useLoaderData, useParams } from 'react-router-dom';
@@ -9,12 +9,33 @@ const ChefDetails = () => {
     const [recipes, setRecipes] = useState(chefDetails);
 
     const {id} = useParams();
-    
-    
+
+        // chef state
+        const [chef, setChef] = useState({});
+
+        
+        // load all chefs
+        useEffect(()=>{
+            const loadChef = async() => {  
+
+                try{
+                    const response = await fetch('http://localhost:5000/chef');
+                    const chefs = await response.json();
+                    // find chef
+                    const currentChef = chefs.find(chef => chef.chef_id === parseInt(id));
+                    setChef(currentChef);
+
+                } catch(error) {
+                    console.log(error);
+                }
+            }
+            loadChef();
+        },[id])
+        
 
     return (
         <div>
-            <DetailsBanner></DetailsBanner>
+            <DetailsBanner chef={chef}></DetailsBanner>
             <div className='mx-2 md:mx-[10%] my-[100px]'>
                 <Recipes recipes={recipes}></Recipes>
             </div>

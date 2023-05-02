@@ -10,8 +10,8 @@ const Recipe = ({recipe}) => {
             <div className="md:w-[70%] p-5 flex flex-col gap-7">
                 <h2 className="card-title">{name}</h2>
                 <div>
-                    <p className='mb-5'><span className='font-bold'>Ingredients:</span>{ingredients}</p>
-                    <p><span className='font-bold'>Cooking Method:</span>{cooking_method}</p>
+                    <p className='mb-5'><span className='font-bold'>Ingredients: </span>{ingredients}</p>
+                    <p><span className='font-bold'>Cooking Method: </span>{cooking_method}</p>
                 </div>
                 <div className="flex justify-between items-center">
                     rating

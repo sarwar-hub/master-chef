@@ -4,7 +4,6 @@ import React from 'react';
 import Recipe from './Recipe/Recipe';
 
 const Recipes = ({recipes}) => {
-    console.log(recipes);
     
     return (
         <>
