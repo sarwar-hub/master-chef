@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const ChefCard = ({chef}) => {
     const {chef_id, image, name, experience, numRecipes, likes} = chef;
-    console.log(chef);
+
     return (
         <div className="card card-side items-center bg-base-100 shadow-xl">
             <figure><img className='h-[400px]' src={image} alt="Movie" /></figure>
@@ -23,7 +23,7 @@ const ChefCard = ({chef}) => {
                         </svg>
                         <span>{likes}</span>
                     </p>
-                    <Link to={`/chefs/${chef_id}`}><button  className="mt-[100px] btn btn-primary">View details</button></Link>
+                    <Link to={`/chef/${chef_id}`}><button  className="mt-[100px] btn btn-primary">View details</button></Link>
                 </div>
             </div>
         </div>
