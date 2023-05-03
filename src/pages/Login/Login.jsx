@@ -5,6 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
+    
 
     // get location
     const location  = useLocation();
@@ -15,7 +16,11 @@ const Login = () => {
     const [error, setError] = useState('');
 
     // data from context
-    const {logIn, googleLogin, githubLogin} = useContext(AuthContext);
+    const {logIn, googleLogin, githubLogin,loading} = useContext(AuthContext);
+
+    if(loading){
+        return <div className='w-[100vw] h-[100vh] flex justify-center items-center'><progress className="absolute text-white progress w-56"></progress></div>;
+    }
 
     // login with email and password
     const handleLogin = async(event) => {

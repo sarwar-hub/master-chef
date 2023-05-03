@@ -16,9 +16,11 @@ const Register = () => {
     const [passError, setPassError] = useState('');
     const [notice, setNotice] = useState('');
 
-    const {createUser, updateNamePhoto, logOut} = useContext(AuthContext);
+    const {createUser, updateNamePhoto, logOut, loading} = useContext(AuthContext);
 
-    
+    if(loading){
+        return <div className='w-[100vw] h-[100vh] flex justify-center items-center'><progress className="absolute text-white progress w-56"></progress></div>;
+    }
 
     const handleRegister = async(event) => {
         event.preventDefault();
