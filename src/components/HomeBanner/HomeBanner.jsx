@@ -10,7 +10,7 @@ const HomeBanner = () => {
                 <div className="max-w-md">
                     <h1 className="mb-5 text-7xl font-bold">Choose Your Master..!</h1>
                     <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button className="btn btn-outline btn-primary">Explore</button>
+                    <button className="btn btn-outline">Explore</button>
                 </div>
             </div>
         </div>

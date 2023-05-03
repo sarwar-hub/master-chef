@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../../utilities/firebase.config';
 
-
+// created context
 export const AuthContext = createContext(null);
+// google provider
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({children}) => { // component----------------------------
 
@@ -24,7 +27,7 @@ const AuthProvider = ({children}) => { // component----------------------------
         }
     },[])
 
-    // create user
+    // create user with email and password
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
@@ -37,9 +40,17 @@ const AuthProvider = ({children}) => { // component----------------------------
             photoURL: photo
         })
     }
-    // login
+    // login with email and password
     const logIn = (email, password) => {
         return signInWithEmailAndPassword(auth,  email, password);
+    }
+    // login with google
+    const googleLogin = () => {
+        return signInWithPopup(auth, googleProvider);
+    }
+    // login with google
+    const githubLogin = () => {
+        return signInWithPopup(auth, githubProvider);
     }
 
 
@@ -49,7 +60,7 @@ const AuthProvider = ({children}) => { // component----------------------------
     }
     
 
-    const data = {user,createUser,updateNamePhoto,logIn,logOut,loadding};
+    const data = {user,createUser,updateNamePhoto,logIn,googleLogin,githubLogin,logOut,loadding};
     return (
         <AuthContext.Provider value={data}>
             {children}

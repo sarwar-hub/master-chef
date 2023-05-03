@@ -1,5 +1,6 @@
 ## Intalled packeges
 + React router
++ Firebase authentication
 + Tailwind css
 + Daisy UI
 + React toastify
