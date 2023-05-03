@@ -6,3 +6,4 @@
 + React toastify
 + React rating
 + React icons
++ React to pdf
