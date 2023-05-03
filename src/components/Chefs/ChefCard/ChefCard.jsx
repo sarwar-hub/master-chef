@@ -2,11 +2,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 
 const ChefCard = ({chef}) => {
     const {chef_id, image, name, experience, numRecipes, likes} = chef;
 
     return (
+        <LazyLoad>
         <div className="border-[1px] card card-side items-center bg-base-100 shadow-xl">
             <figure><img className='h-[400px]' src={image} alt="Movie" /></figure>
             <div className="card-body">
@@ -27,6 +29,7 @@ const ChefCard = ({chef}) => {
                 </div>
             </div>
         </div>
+        </LazyLoad>
     );
 };
 

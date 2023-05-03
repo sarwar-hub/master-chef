@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import banner from '../../assets/banner2.jpg';
-
+import LazyLoad from 'react-lazyload';
 const HomeBanner = () => {
     return (
         <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner})` }}>
