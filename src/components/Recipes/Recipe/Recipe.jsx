@@ -28,7 +28,7 @@ const Recipe = ({recipe}) => {
 
     const {recipe_id, image, name, ingredients, cooking_method, rating} = recipe;
     return (
-        <div className="flex flex-col justify-center md:flex-row bg-base-100 shadow-xl rounded-xl">
+        <div className="border-r-[1px] flex flex-col justify-center md:flex-row bg-base-100 shadow-xl rounded-xl">
             <figure className='md:w-[30%] object-cover rounded-xl'><img className='md:w-full md:h-full' src={image} alt=""/></figure>
             <div className="md:w-[70%] p-5 flex flex-col gap-7">
                 <h2 className="card-title">{name}</h2>
