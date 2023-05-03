@@ -31,7 +31,7 @@ const Navbar = () => {
                         <li><IsActive to='/blog'>Blog</IsActive></li>
                     </ul>
                 </div>
-                <Link className="normal-case text-xl font-semibold"><span className='bg-[#50463A] p-2 rounded-lg'> MASTER</span><span className='text-white'>CHEF</span></Link>
+                <Link to='/' className="normal-case text-xl font-semibold"><span className='bg-[#50463A] p-2 rounded-lg'> MASTER</span><span className='text-white'>CHEF</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

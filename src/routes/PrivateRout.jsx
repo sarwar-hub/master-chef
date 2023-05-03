@@ -8,7 +8,7 @@ const PrivateRout = ({children}) => {
     const {user,loading} = useContext(AuthContext);
     const location = useLocation();
     if(loading){
-        return <div className='w-[100vw] h-[100vh] flex justify-center items-center'><progress className="absolute progress w-56"></progress></div>;
+        return <div className='w-[100vw] h-[100vh] flex justify-center items-center'><progress className="absolute text-white progress w-56"></progress></div>;
     }
 
     if(user) {
