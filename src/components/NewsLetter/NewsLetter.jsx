@@ -6,11 +6,11 @@ const NewsLetter = () => {
         <>
         <h1 className='text-5xl md:text-7xl'>Our Newsletter</h1>
         <hr className='my-7' />
-        <div className='border-[1px] flex justify-around items-center px-10 py-[100px] rounded-xl w-[100%] shadow-xl'>
+        <div className='border-[1px] flex flex-col md:flex-row text-center md:text-left justify-around items-center px-10 py-[100px] rounded-xl w-[100%] shadow-xl'>
             <div>
                 <h1 className='text-5xl'>Subscribe Now..!</h1>
             </div>
-            <div className="form-control">
+            <div className="form-control mt-5 md:mt-0">
                 <div className="input-group">
                     <input type="email" placeholder="Your Email" className="input input-bordered" />
                     <button className="btn btn-square px-4">
