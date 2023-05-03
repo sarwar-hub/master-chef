@@ -29,6 +29,7 @@ const AuthProvider = ({children}) => { // component----------------------------
 
     // create user with email and password
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
@@ -42,13 +43,14 @@ const AuthProvider = ({children}) => { // component----------------------------
     }
     // login with email and password
     const logIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth,  email, password);
     }
     // login with google
     const googleLogin = () => {
         return signInWithPopup(auth, googleProvider);
     }
-    // login with google
+    // login with github
     const githubLogin = () => {
         return signInWithPopup(auth, githubProvider);
     }

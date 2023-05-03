@@ -10,7 +10,7 @@ const Main = () => {
     const navigation = useNavigation();
     return (
         <div>
-            <div className='absolute flex justify-center items-center'>{navigation.state === 'loading' && <span className='p-5 bg-base-300 rounded-lg'>Please wait...</span>}</div>
+            {navigation.state === 'loading' && <div className='w-[100vw] h-[100vh] flex justify-center items-center'><progress className="absolute progress w-56"></progress></div>}
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
