@@ -1,14 +1,22 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
+
+
+    // get location
+    const location  = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
+
+    // states
     const [error, setError] = useState('');
     const [passError, setPassError] = useState('');
     const [notice, setNotice] = useState('');
 
-    const {createUser, updateNamePhoto, loadding} = useContext(AuthContext);
+    const {createUser, updateNamePhoto, loadding, logOut} = useContext(AuthContext);
 
     if(loadding) {
         return <h1 className='absolute text-6xl'>loadding</h1>;
@@ -32,6 +40,8 @@ const Register = () => {
             await createUser(email, password);
             await updateNamePhoto(name, photo);
             event.target.reset();
+            await logOut();
+            navigate('/login');
         } catch(error) {
             setError(error.message);
         }

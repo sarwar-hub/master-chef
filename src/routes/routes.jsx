@@ -8,6 +8,7 @@ import About from "../pages/About/About";
 import Err404 from "../pages/Err404/Err404";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register/Register";
+import PrivateRout from "./PrivateRout";
 
 const router = createBrowserRouter([
     {
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
             },
             {
                 path: ':id',
-                element: <ChefDetails></ChefDetails>,
+                element: <PrivateRout><ChefDetails></ChefDetails></PrivateRout>,
                 loader:({params})=>fetch(`http://localhost:5000/chef/${params.id}`)
             }
         ]

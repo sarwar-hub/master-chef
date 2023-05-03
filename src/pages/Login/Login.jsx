@@ -1,11 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
+
+    // get location
+    const location  = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
+
+    // error state
     const [error, setError] = useState('');
 
+    // data from context
     const {logIn} = useContext(AuthContext);
 
     const handleLogin = async(event) => {
@@ -18,6 +26,7 @@ const Login = () => {
         try {
             await logIn(email, password);
             event.target.reset();
+            navigate(from, {replace:true});
         } catch(error) {
             setError(error.message);
         }
