@@ -13,14 +13,14 @@ const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({children}) => { // component----------------------------
 
     const [user, setUser] = useState({});
-    const [loadding, setLoadding] = useState(true);
+    const [loading, setLoading] = useState(true);
 
 
 
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            setLoadding(false);
+            setLoading(false);
         })
         return () => {
             unsubscribe();
@@ -60,7 +60,7 @@ const AuthProvider = ({children}) => { // component----------------------------
     }
     
 
-    const data = {user,createUser,updateNamePhoto,logIn,googleLogin,githubLogin,logOut,loadding};
+    const data = {user,createUser,updateNamePhoto,logIn,googleLogin,githubLogin,logOut,loading};
     return (
         <AuthContext.Provider value={data}>
             {children}
