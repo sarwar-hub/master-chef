@@ -23,7 +23,7 @@ const ChefCard = ({chef}) => {
                         </svg>
                         <span>{likes}</span>
                     </p>
-                    <Link to={`/chef/${chef_id}`}><button  className="mt-[100px] btn btn-primary">View details</button></Link>
+                    <Link to={`/chef/${chef_id}`}><button  className="mt-[100px] btn btn-outline">View details</button></Link>
                 </div>
             </div>
         </div>

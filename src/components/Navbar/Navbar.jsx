@@ -42,7 +42,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 { !user 
-                ? <Link to='/login'><button className='btn btn-sm mr-3'>Login</button></Link>
+                ? <Link to='/login'><button className='btn btn-outline btn-sm mr-3'>Login</button></Link>
                 :
                 <div className="dropdown group dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
