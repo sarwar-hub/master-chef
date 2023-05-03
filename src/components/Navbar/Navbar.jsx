@@ -44,15 +44,16 @@ const Navbar = () => {
                 { !user 
                 ? <Link to='/login'><button className='btn btn-sm mr-3'>Login</button></Link>
                 :
-                <div className="dropdown dropdown-end">
+                <div className="dropdown group dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                         <img src={user?user.photoURL:avatar} />
                         </div>
                     </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-compact text-center hidden group-hover:block absolute right-0 top-10 mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><a>{user?.displayName}</a></li>
-                        <button onClick={handleLogOut} className='btn btn-sm bg-red-800 text-white hover:text-red-700'>Logout</button>
+                        <li><a>Profile</a></li>
+                        <button onClick={handleLogOut} className='btn btn-sm w-full bg-red-800 text-white hover:text-red-700'>Logout</button>
                     </ul>
                 </div>
                 }
