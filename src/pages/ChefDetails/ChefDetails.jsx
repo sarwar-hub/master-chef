@@ -19,7 +19,7 @@ const ChefDetails = () => {
         const loadChef = async() => {  
 
             try{
-                const response = await fetch('http://localhost:5000/chef');
+                const response = await fetch('https://master-chef-server-sarwar-hub.vercel.app/chef');
                 const chefs = await response.json();
                 // find chef
                 const currentChef = chefs.find(chef => chef.chef_id === parseInt(id));

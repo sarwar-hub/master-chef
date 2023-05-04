@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <PrivateRout><ChefDetails></ChefDetails></PrivateRout>,
-                loader:({params})=>fetch(`http://localhost:5000/chef/${params.id}`)
+                loader:({params})=>fetch(`https://master-chef-server-sarwar-hub.vercel.app/chef/${params.id}`)
             }
         ]
     },

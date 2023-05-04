@@ -11,7 +11,7 @@ const Chefs = () => {
         useEffect(()=>{
             const loadChef = async() => {                    
                 try{
-                    const response = await fetch('http://localhost:5000/chef/');
+                    const response = await fetch('https://master-chef-server-sarwar-hub.vercel.app/chef/');
                     const data = await response.json();
                     setChefs(data);
                 } catch(error) {
